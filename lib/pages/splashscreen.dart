@@ -8,11 +8,19 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   // ignore: must_call_super
   void initState() {
-    Timer(Duration(seconds: 4),()=>{Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen(),),),});
+    Timer(
+        Duration(seconds: 4),
+        () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomeScreen(),
+                ),
+              ),
+            });
   }
 
   @override
@@ -34,7 +42,8 @@ class _SplashScreenState extends State<SplashScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CircleAvatar(
-                        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                        backgroundColor:
+                            Theme.of(context).scaffoldBackgroundColor,
                         radius: 50.0,
                         child: Icon(
                           Icons.fastfood,
@@ -44,7 +53,14 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 20),
-                        child: Text('Foodie World',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,letterSpacing: 1.5,fontSize: 20),),
+                        child: Text(
+                          'Foodie World',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 1.5,
+                              fontSize: 20),
+                        ),
                       )
                     ],
                   ),
