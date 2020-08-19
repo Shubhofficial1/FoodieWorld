@@ -13,15 +13,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 0.0,
+        actions: [
+          shopcart(),
+        ],
+      ),
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(vertical: 20.0),
           children: [
-            Column(
-              children: [
-                shopcart(),
-              ],
-            ),
             heading_text(),
             SizedBox(
               height: 15.0,

@@ -22,7 +22,7 @@ List<Fruits> fruits = [
       price: 30,
       quantity: 1,
       description:
-      'Oranges are round orange-coloured fruit that grow on a tree which can reach 10 metres (33 ft) high. '),
+      'Oranges are round orange-coloured fruit that grow on a tree which can reach 10 metres (33 ft) high.'),
   Fruits(
       name: 'Banana',
       imageUrl: 'assets/images/banana.jpg',
@@ -43,7 +43,7 @@ List<Fruits> fruits = [
       price: 40,
       quantity: 1,
       description:
-          'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible'),
+          'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible.'),
 
  Fruits(
       name: 'Avacado',
@@ -52,12 +52,5 @@ List<Fruits> fruits = [
       quantity: 1,
       description:
           'Avocado  is a large, fleshy, pear-shaped fruit with a single large seed.'),
-  Fruits(
-      name: 'Pineapple',
-      imageUrl: 'assets/images/pineapple.jpg',
-      price: 30,
-      quantity: 1,
-      description:
-          'pineapple is a tropical fruit with a tough outer shell that looks like a pine cone with edible yellow fruit inside.'),
 
 ];
