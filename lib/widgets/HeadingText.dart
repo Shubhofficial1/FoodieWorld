@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: camel_case_types
 class heading_text extends StatelessWidget {
   const heading_text({
     Key key,

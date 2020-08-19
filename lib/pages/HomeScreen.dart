@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_world/widgets/fruitCarousal.dart';
-import 'package:foodie_world/widgets/heading_text.dart';
-import 'package:foodie_world/widgets/search_bar.dart';
-import 'package:foodie_world/widgets/shop_cart.dart';
+import 'package:foodie_world/widgets/FruitCarousal.dart';
+import 'package:foodie_world/widgets/HeadingText.dart';
+import 'package:foodie_world/widgets/SearchBar.dart';
+import 'package:foodie_world/widgets/ShoppingCart.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -22,9 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 shopcart(),
               ],
             ),
-            SizedBox(
-              height: 10.0,
-            ),
             heading_text(),
             SizedBox(
               height: 15.0,
@@ -34,13 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20.0,
             ),
             fruitsCarousal()
-
           ],
         ),
       ),
     );
   }
 }
-
-
-
