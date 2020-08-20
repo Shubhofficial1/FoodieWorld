@@ -10,9 +10,9 @@ class WishListIcon extends StatelessWidget {
       },
       child: Icon(
         FontAwesomeIcons.bookmark,
-        size: 22.0,
+        size: 20.0,
         color: Colors.black87,
       ),
-    );;
+    );
   }
 }

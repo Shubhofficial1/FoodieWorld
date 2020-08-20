@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'HomeScreen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         Duration(seconds: 4),
         () => {
+          Navigator.pop(context),
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -30,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
         fit: StackFit.expand,
         children: [
           Container(
-            decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+            decoration: BoxDecoration(color: Colors.red),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -46,8 +48,8 @@ class _SplashScreenState extends State<SplashScreen> {
                             Theme.of(context).scaffoldBackgroundColor,
                         radius: 50.0,
                         child: Icon(
-                          Icons.fastfood,
-                          color: Theme.of(context).accentColor,
+                          FontAwesomeIcons.freeCodeCamp,
+                          color: Colors.orange,
                           size: 50.0,
                         ),
                       ),
@@ -56,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         child: Text(
                           'Foodie World',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black87,
                               fontWeight: FontWeight.w500,
                               letterSpacing: 1.5,
                               fontSize: 20),

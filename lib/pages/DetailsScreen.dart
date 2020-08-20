@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foodie_world/models/fruit.dart';
-import 'package:foodie_world/widgets/BackIcon.dart';
+import 'package:foodie_world/pages/CartScreen.dart';
+import 'package:foodie_world/pages/WishlistScreen.dart';
 import 'package:foodie_world/widgets/ShoppingCart.dart';
 import 'package:foodie_world/widgets/Wishlist.dart';
 
@@ -17,50 +19,35 @@ class _DetailsPageState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Details Page'),
+        centerTitle: true,
+        elevation: 0.0,
+        actions: [
+          shopcart(),
+        ],
+      ),
       body: Column(
         children: [
           Expanded(
-            flex:8,
+            flex: 15,
             child: Stack(
               children: [
                 Hero(
                   tag: widget.fruit.imageUrl,
-                  child: ClipRRect(
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(10.0),
-                        bottomRight: Radius.circular(10.0)),
-                    child: Image(
-                      height: MediaQuery.of(context).size.width,
-                      width: MediaQuery.of(context).size.width,
-                      image: AssetImage(widget.fruit.imageUrl),
-                      fit: BoxFit.cover,
-                    ),
+                  child: Image(
+                    height: MediaQuery.of(context).size.width,
+                    width: MediaQuery.of(context).size.width,
+                    image: AssetImage(widget.fruit.imageUrl),
+                    fit: BoxFit.cover,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      back(),
-
-                      Row(
-                        children: [
-                          WishListIcon(),
-                          shopcart(),
-                        ],
-                      ),
-
-                    ],
-                  ),
-                ),
-
               ],
             ),
           ),
           Expanded(
-            flex: 12,
-            child:Container(
+            flex: 20,
+            child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.width,
               color: Theme.of(context).scaffoldBackgroundColor,
@@ -81,9 +68,6 @@ class _DetailsPageState extends State<DetailsPage> {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -93,7 +77,7 @@ class _DetailsPageState extends State<DetailsPage> {
                               fontSize: 18.0,
                               fontWeight: FontWeight.w500,
                               letterSpacing: 1,
-                          color: Colors.black38),
+                              color: Colors.black38),
                         ),
                       ],
                     ),
@@ -103,93 +87,85 @@ class _DetailsPageState extends State<DetailsPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                       Row(
-                         children: [
-                           GestureDetector(
-                             onTap :(){
-                               print('minus button clicked');
-                               setState(() {
-                                 if (widget.fruit.quantity > 1) {
-                                   widget.fruit.quantity--;
-                                 } else {
-                                   widget.fruit.quantity = 1;
-                                 }
-                                 print(widget.fruit.quantity);
-                               });
-                               },
-                             child: ClipRRect(
-                               borderRadius: BorderRadius.only(
-                                   topLeft:
-                                   Radius.circular(10.0),
-                                   bottomLeft:
-                                   Radius.circular(10.0)),
-                                 child: Container(
-                                 height: 40.0,
-                                 width: 40.0,
-                                 color: Color(0xffdcdcdc),
-                                 child: Icon(
-                                   FontAwesomeIcons.minus,
-                                   size: 15.0,
-                                   color: Colors.black38,
-                                 ),
-                               ),
-                             ),
-                           ),
-                           Container(
-                             height: 40.0,
-                             width: 40.0,
-                             color: Color(0xffdcdcdc),
-                             child: Center(
-                               child: Text(
-                                 '${widget.fruit.quantity}',
-                                 style: TextStyle(
-                                     fontSize: 20.0,
-                                     fontWeight: FontWeight.bold,
-                                     color: Colors.black),
-                               ),
-                             )
-                           ),
-                           GestureDetector(
-                             onTap:(){
-                               print('plus button clicked');
-                               setState(() {
-                                 if (widget.fruit.quantity >=
-                                     10) {
-                                   widget.fruit.quantity = 10;
-                                 } else {
-                                   widget.fruit.quantity++;
-                                 }
-                                 print(widget.fruit.quantity);
-                               });
-                             },
-                             child: ClipRRect(
-                             borderRadius: BorderRadius.only(
-                                 topRight:
-                                 Radius.circular(10.0),
-                                 bottomRight:
-                                 Radius.circular(10.0)),
-                               child: Container(
-                                 height: 40.0,
-                                 width: 40.0,
-                                 color: Color(0xffdcdcdc),
-                                 child: Icon(
-                                   FontAwesomeIcons.plus,
-                                   size: 15.0,
-                                   color: Colors.black38,
-                                 ),
-                               ),
-                             ),
-                           ),
-                         ],
-                       ),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                print('minus button clicked');
+                                setState(() {
+                                  if (widget.fruit.quantity > 1) {
+                                    widget.fruit.quantity--;
+                                  } else {
+                                    widget.fruit.quantity = 1;
+                                  }
+                                  print(widget.fruit.quantity);
+                                });
+                              },
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10.0),
+                                    bottomLeft: Radius.circular(10.0)),
+                                child: Container(
+                                  height: 40.0,
+                                  width: 40.0,
+                                  color: Color(0xffdcdcdc),
+                                  child: Icon(
+                                    FontAwesomeIcons.minus,
+                                    size: 15.0,
+                                    color: Colors.black38,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Container(
+                                height: 40.0,
+                                width: 40.0,
+                                color: Color(0xffdcdcdc),
+                                child: Center(
+                                  child: Text(
+                                    '${widget.fruit.quantity}',
+                                    style: TextStyle(
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                )),
+                            GestureDetector(
+                              onTap: () {
+                                print('plus button clicked');
+                                setState(() {
+                                  if (widget.fruit.quantity >= 10) {
+                                    widget.fruit.quantity = 10;
+                                  } else {
+                                    widget.fruit.quantity++;
+                                  }
+                                  print(widget.fruit.quantity);
+                                });
+                              },
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(10.0),
+                                    bottomRight: Radius.circular(10.0)),
+                                child: Container(
+                                  height: 40.0,
+                                  width: 40.0,
+                                  color: Color(0xffdcdcdc),
+                                  child: Icon(
+                                    FontAwesomeIcons.plus,
+                                    size: 15.0,
+                                    color: Colors.black38,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         Text(
-                            '₹ ${(widget.fruit.price) * (widget.fruit.quantity)}',
+                          '₹ ${(widget.fruit.price) * (widget.fruit.quantity)}',
                           style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
-                              letterSpacing: 1
-
-                          ),
+                              letterSpacing: 1),
                         )
                       ],
                     ),
@@ -198,11 +174,13 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                     Row(
                       children: [
-                        Text('Product Description',
-                        style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w400,
-                            letterSpacing: 1),)
+                        Text(
+                          'Product Description',
+                          style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w400,
+                              letterSpacing: 1),
+                        )
                       ],
                     ),
                     SizedBox(
@@ -211,17 +189,15 @@ class _DetailsPageState extends State<DetailsPage> {
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            widget.fruit.description,
-                            style: TextStyle(
+                          Text(widget.fruit.description,
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w300,
-                              height: 1.5,
-                              letterSpacing: 1,
-                            ),
-                              maxLines: 6,
-                              overflow: TextOverflow.ellipsis
-                          )
+                                height: 1.5,
+                                letterSpacing: 1,
+                              ),
+                              maxLines: 4,
+                              overflow: TextOverflow.ellipsis)
                         ]),
                   ],
                 ),
@@ -229,26 +205,93 @@ class _DetailsPageState extends State<DetailsPage> {
             ),
           ),
           Expanded(
-            flex: 2,
-            child: GestureDetector(
-              onTap: (){
-                print('Add to cart button pressed');
-              },
-              child: Container(
-                color: Colors.yellow,
-                child: Center(
-                  child: Text(
-                    'Add to cart',
-                    style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 2,
-                        color: Colors.black87),
+            flex: 3,
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
+                Builder(
+                  builder: (context) =>
+                      Expanded(
+                    flex: 3,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: RaisedButton(
+                        color: Color(0xffdcdcdc),
+                        onPressed: () {
+                          print('wishlist button pressed');
+                          SnackBar snackbar = SnackBar(
+                            content: Text('Added to Wishlist'),
+                            duration: Duration(milliseconds: 2000),
+                            action: SnackBarAction(
+                              label: 'Go to wishlist',
+                              onPressed: () => {print('Go to wishlist clicked'),
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => WishlistScreen(),),)},
+                              textColor: Colors.yellow,
+                            ),
+                          );
+                          Scaffold.of(context).showSnackBar(snackbar);
+                        },
+                        child: Center(
+                          child: Icon(FontAwesomeIcons.solidHeart,
+                              size: 30.0, color: Colors.yellow),
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
+                Builder(
+                  builder: (context) => Expanded(
+                    flex: 12,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: RaisedButton(
+                        color: Colors.yellow,
+                        onPressed: () {
+                          print('Add to cart button pressed ');
+                          SnackBar snackbar = SnackBar(
+                            content: Text('Added to Cart'),
+                            duration: Duration(milliseconds: 2000),
+                            action: SnackBarAction(
+                              label: 'GO TO CART',
+                              onPressed: () => {print('undo'),
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => CartSceeen(),),)},
+                              textColor: Colors.yellow,
+                            ),
+                          );
+                          Scaffold.of(context).showSnackBar(snackbar);
+                        },
+                        child: Center(
+                          child: Text(
+                            'Add to cart',
+                            style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 2,
+                                color: Colors.black54),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
+              ],
             ),
           ),
+          Expanded(
+            flex: 2,
+            child: SizedBox(),
+          )
         ],
       ),
     );

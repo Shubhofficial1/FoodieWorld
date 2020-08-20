@@ -3,6 +3,7 @@ import 'package:foodie_world/widgets/FruitCarousal.dart';
 import 'package:foodie_world/widgets/HeadingText.dart';
 import 'package:foodie_world/widgets/SearchBar.dart';
 import 'package:foodie_world/widgets/ShoppingCart.dart';
+import 'package:foodie_world/widgets/Wishlist.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -20,9 +21,10 @@ class _HomeScreenState extends State<HomeScreen> {
           shopcart(),
         ],
       ),
+      drawer: Drawer(),
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.symmetric(vertical: 20.0),
+//          padding: EdgeInsets.symmetric(vertical: 20.0),
           children: [
             heading_text(),
             SizedBox(
