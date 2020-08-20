@@ -11,18 +11,13 @@ class shopcart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        IconButton(
-          icon: Icon(FontAwesomeIcons.shoppingBag),
-          iconSize: 22.0,
-          color: Colors.black87,
-          onPressed: () {
-            print('cart button was pressed ');
-          },
-        ),
-      ],
+    return IconButton(
+      icon: Icon(FontAwesomeIcons.shoppingBag),
+      iconSize: 22.0,
+      color: Colors.black87,
+      onPressed: () {
+        print('cart button was pressed ');
+      },
     );
   }
 }
