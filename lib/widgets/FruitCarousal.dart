@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_world/models/fruit.dart';
 import 'package:foodie_world/pages/DetailsScreen.dart';
+import 'package:foodie_world/pages/ProductsScreen.dart';
 
 class fruitsCarousal extends StatelessWidget {
   fruitsCarousal({
@@ -22,13 +23,19 @@ class fruitsCarousal extends StatelessWidget {
                     fontSize: 20,
                     fontWeight: FontWeight.w700),
               ),
-              Text(
-                'See All',
-                style: TextStyle(
-                    letterSpacing: 1,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.blue),
+              GestureDetector(
+                onTap: (){
+                  print('see all link pressed');
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProductsScreen(),),);
+                  },
+                child: Text(
+                  'See All',
+                  style: TextStyle(
+                      letterSpacing: 1,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.blue),
+                ),
               ),
             ],
           ),
@@ -75,8 +82,9 @@ class fruitsCarousal extends StatelessWidget {
                    ),
                   ],
                 );
-              }),
-        )
+              },
+          ),
+        ),
       ],
     );
   }

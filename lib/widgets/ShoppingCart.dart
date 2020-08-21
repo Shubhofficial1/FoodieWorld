@@ -18,7 +18,7 @@ class shopcart extends StatelessWidget {
       color: Colors.black54,
       onPressed: () {
         print('cart button was pressed ');
-        Navigator.push(context, MaterialPageRoute(builder: (context) => CartSceeen(),),);
+        Navigator.push(context, MaterialPageRoute(builder: (context) => CartScreen(),),);
       },
     );
   }

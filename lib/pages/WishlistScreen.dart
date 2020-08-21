@@ -7,6 +7,8 @@ class WishlistScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Wishlist Page'),
+        centerTitle: true,
+        elevation: 0.0,
         actions: [
           shopcart()
         ],

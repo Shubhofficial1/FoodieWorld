@@ -5,7 +5,6 @@ import 'package:foodie_world/models/fruit.dart';
 import 'package:foodie_world/pages/CartScreen.dart';
 import 'package:foodie_world/pages/WishlistScreen.dart';
 import 'package:foodie_world/widgets/ShoppingCart.dart';
-import 'package:foodie_world/widgets/Wishlist.dart';
 
 class DetailsPage extends StatefulWidget {
   final Fruits fruit;
@@ -110,12 +109,15 @@ class _DetailsPageState extends State<DetailsPage> {
                                   width: 40.0,
                                   color: Color(0xffdcdcdc),
                                   child: Icon(
-                                    FontAwesomeIcons.minus,
-                                    size: 15.0,
+                                    Icons.remove,
+                                    size: 30.0,
                                     color: Colors.black38,
                                   ),
                                 ),
                               ),
+                            ),
+                            SizedBox(
+                              width: 2.0,
                             ),
                             Container(
                                 height: 40.0,
@@ -129,7 +131,11 @@ class _DetailsPageState extends State<DetailsPage> {
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black),
                                   ),
-                                )),
+                                ),
+                            ),
+                            SizedBox(
+                              width: 2.0,
+                            ),
                             GestureDetector(
                               onTap: () {
                                 print('plus button clicked');
@@ -151,8 +157,8 @@ class _DetailsPageState extends State<DetailsPage> {
                                   width: 40.0,
                                   color: Color(0xffdcdcdc),
                                   child: Icon(
-                                    FontAwesomeIcons.plus,
-                                    size: 15.0,
+                                    Icons.add,
+                                    size: 30.0,
                                     color: Colors.black38,
                                   ),
                                 ),
@@ -219,14 +225,13 @@ class _DetailsPageState extends State<DetailsPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
                       child: RaisedButton(
-                        color: Color(0xffdcdcdc),
                         onPressed: () {
                           print('wishlist button pressed');
                           SnackBar snackbar = SnackBar(
-                            content: Text('Added to Wishlist'),
+                            content: Text('Added to wishlist'),
                             duration: Duration(milliseconds: 2000),
                             action: SnackBarAction(
-                              label: 'Go to wishlist',
+                              label: 'GO TO WISHLIST',
                               onPressed: () => {print('Go to wishlist clicked'),
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => WishlistScreen(),),)},
                               textColor: Colors.yellow,
@@ -261,7 +266,7 @@ class _DetailsPageState extends State<DetailsPage> {
                             action: SnackBarAction(
                               label: 'GO TO CART',
                               onPressed: () => {print('undo'),
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => CartSceeen(),),)},
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => CartScreen(),),),},
                               textColor: Colors.yellow,
                             ),
                           );
