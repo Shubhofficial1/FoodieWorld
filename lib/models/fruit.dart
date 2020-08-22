@@ -75,6 +75,14 @@ List<Fruits> fruits = [
       rating: 4,
       description:
       'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible.'),
+  Fruits(
+      name: 'Red Cherry',
+      imageUrl: 'assets/images/blueberry.jpg',
+      price: 40,
+      quantity: 1,
+      rating: 4,
+      description:
+      'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible.'),
 
 
 ];
