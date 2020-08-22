@@ -1,6 +1,11 @@
 # foodie_world
 Development phase  💪
 
+
+#############################################################
+
+Components overview :
+
 1.Fruit carousal --added ✔️ 😃
 
 2.Listview.buider/Gridview.builder --done ✔️ 😃
