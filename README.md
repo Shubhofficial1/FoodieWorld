@@ -1,5 +1,5 @@
-# foodie_world
-Development phase  💪
+## Foodie_world
+### Development phase  💪
 
 
 Components Overview :
