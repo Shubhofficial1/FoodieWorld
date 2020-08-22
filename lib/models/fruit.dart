@@ -27,6 +27,15 @@ List<Fruits> fruits = [
       description:
       'Oranges are round orange-coloured fruit that grow on a tree which can reach 10 metres (33 ft) high.'),
   Fruits(
+      name: 'Red Cherry',
+      imageUrl: 'assets/images/blueberry.jpg',
+      price: 40,
+      quantity: 1,
+      rating: 4,
+      description:
+      'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible.'),
+
+  Fruits(
       name: 'Banana',
       imageUrl: 'assets/images/banana.jpg',
       price: 45,
@@ -34,14 +43,7 @@ List<Fruits> fruits = [
       rating: 4.8,
       description:
       'A banana is a tropical fruit that\'s quite popular all over the world. It grows in bunches on a banana tree.'),
-  Fruits(
-      name: 'Citrus',
-      imageUrl: 'assets/images/citrus.jpg',
-      price: 10,
-      quantity: 1,
-      rating: 3.9,
-      description:
-      'Citrus is a genus of flowering trees and shrubs in the rue family, Rutaceae.'),
+
   Fruits(
       name: 'Papaya',
       imageUrl: 'assets/images/papaya.jpg',
@@ -76,13 +78,15 @@ List<Fruits> fruits = [
       description:
       'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible.'),
   Fruits(
-      name: 'Red Cherry',
-      imageUrl: 'assets/images/blueberry.jpg',
-      price: 40,
+      name: 'Citrus',
+      imageUrl: 'assets/images/citrus.jpg',
+      price: 10,
       quantity: 1,
-      rating: 4,
+      rating: 3.9,
       description:
-      'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible.'),
+      'Citrus is a genus of flowering trees and shrubs in the rue family, Rutaceae.'),
+
+
 
 
 ];
