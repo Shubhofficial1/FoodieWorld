@@ -2,7 +2,7 @@
 ### Development phase  💪
 
 
-Components Overview :
+#### Components Overview :
 
 1.Fruit carousal --added ✔️ 😃
 
