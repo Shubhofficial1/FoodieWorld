@@ -43,13 +43,13 @@ List<Fruits> fruits = [
       description:
       'Citrus is a genus of flowering trees and shrubs in the rue family, Rutaceae.'),
   Fruits(
-      name: 'Apple',
-      imageUrl: 'assets/images/apple.jpg',
-      price: 40,
+      name: 'Papaya',
+      imageUrl: 'assets/images/papaya.jpg',
+      price: 30,
       quantity: 1,
       rating: 4,
       description:
-          'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible.'),
+      'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible.'),
 
  Fruits(
       name: 'Avacado',
@@ -59,5 +59,22 @@ List<Fruits> fruits = [
      rating: 2.9,
       description:
           'Avocado  is a large, fleshy, pear-shaped fruit with a single large seed.'),
+  Fruits(
+      name: 'Apple',
+      imageUrl: 'assets/images/apple.jpg',
+      price: 40,
+      quantity: 1,
+      rating: 4,
+      description:
+      'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible.'),
+  Fruits(
+      name: 'Red Cherry',
+      imageUrl: 'assets/images/redcherry.jpg',
+      price: 40,
+      quantity: 1,
+      rating: 4,
+      description:
+      'The apple is a pome fruit, in which the ripened ovary and surrounding tissue both become fleshy and edible.'),
+
 
 ];

@@ -3,6 +3,7 @@ import 'package:foodie_world/models/fruit.dart';
 import 'package:foodie_world/pages/DetailsScreen.dart';
 import 'package:foodie_world/pages/ProductsScreen.dart';
 
+// ignore: camel_case_types
 class fruitsCarousal extends StatelessWidget {
   fruitsCarousal({
     Key key,
