@@ -36,9 +36,6 @@
 11.google sign in -- future Development 🔮
 
 
-#### Screenshots
-
-![](ScreenShots/splashScreen.jpg)
 
 
 
