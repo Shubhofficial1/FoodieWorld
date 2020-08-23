@@ -36,6 +36,22 @@
 11.google sign in -- future Development 🔮
 
 
+### Screenshots  📸  : 
+
+
+#### Splash Screen 🌊 :
+
+<img src="screenshot1.jpg" height="480px">
+
+#### Home Screen 🏠 :
+
+<img src="screenshot2.jpg" height="480px">
+
+#### Details Page 🍲 :
+
+<img src="screenshot3.jpg" height="480px">
+
+
 
 
 
